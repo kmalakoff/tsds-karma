@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "@biomejs/biome", "tsds-karma"]
+ignores: ["node-version-use", "ts-dev-stack", "@biomejs/biome", "tsds-karma", "assert", "karma", "karma-chrome-launcher", "karma-mocha", "karma-mocha-reporter", "karma-sourcemap-loader", "karma-webpack", "regenerator-runtime", "ts-loader", "ts-swc-loaders", "webpack", "typescript"]
