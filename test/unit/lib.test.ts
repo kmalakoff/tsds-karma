@@ -57,7 +57,8 @@ function addTests(repo) {
     describe('happy path', () => {
       it('test:karma', (done) => {
         // Requires Chrome/Chromium for ChromeHeadless
-        karma([], { cwd: dest }, (err?: Error): undefined => {
+        // Only run .ts tests - .cjs files use require() which doesn't work in browsers
+        karma(['test/unit/*.test.ts'], { cwd: dest, stdio: 'inherit' }, (err?: Error): undefined => {
           if (err) {
             done(err.message);
             return;

@@ -7,7 +7,7 @@ import { type CommandCallback, type CommandOptions, installPath } from 'tsds-lib
 import url from 'url';
 
 const __dirname = path.dirname(typeof __filename === 'undefined' ? url.fileURLToPath(import.meta.url) : __filename);
-const config = path.join(__dirname, '..', '..', 'assets', 'karma.conf.js');
+const config = path.join(__dirname, '..', '..', 'assets', 'karma.conf.cjs');
 
 export default function karma(args: string[], options: CommandOptions, callback: CommandCallback) {
   const cwd: string = (options.cwd as string) || process.cwd();
