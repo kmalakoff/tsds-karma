@@ -1,4 +1,5 @@
 import spawn from 'cross-spawn-cb';
+import getopts from 'getopts-compat';
 import { link, unlink } from 'link-unlink';
 import path from 'path';
 import Queue from 'queue-cb';
@@ -15,13 +16,20 @@ const config = path.join(__dirname, '..', '..', 'assets', 'karma.conf.cjs');
 
 function worker(args: string[], options: CommandOptions, callback: CommandCallback) {
   const cwd: string = (options.cwd as string) || process.cwd();
+  const opts = getopts(args, { alias: { 'dry-run': 'd' }, boolean: ['dry-run'] });
+
+  if (opts['dry-run']) {
+    console.log('Dry-run: would run browser tests with karma');
+    return callback();
+  }
 
   link(cwd, installPath(options), (err, restore) => {
     if (err) return callback(err);
 
     try {
       const karmaBin = resolveBin('karma');
-      const tests = args.length ? args[0] : 'test/**/*.test.*';
+      const filteredArgs = args.filter((arg) => arg !== '--dry-run' && arg !== '-d');
+      const tests = filteredArgs.length ? filteredArgs[0] : 'test/**/*.test.*';
 
       const queue = new Queue(1);
       queue.defer(spawn.bind(null, karmaBin, ['start', config, tests], options));
