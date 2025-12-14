@@ -8,7 +8,7 @@ var extensions = [
     '.mjs'
 ];
 var preprocessors = extensions.reduce(function(memo, ext) {
-    memo['test/**/*' + ext] = [
+    memo["test/**/*".concat(ext)] = [
         'webpack',
         'sourcemap'
     ];
