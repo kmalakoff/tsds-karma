@@ -1,6 +1,6 @@
 {
   "name": "tsds-karma",
-  "version": "1.14.7",
+  "version": "1.15.0",
   "description": "Development stack for TypeScript libraries",
   "keywords": [
     "c8",
