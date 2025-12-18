@@ -42,6 +42,6 @@ function worker(args: string[], options: CommandOptions, callback: CommandCallba
   });
 }
 
-export default function karma(args: string[], options: CommandOptions, callback: CommandCallback): undefined {
+export default function karma(args: string[], options: CommandOptions, callback: CommandCallback): void {
   version !== 'local' ? workerWrapper('stable', args, options, callback) : worker(args, options, callback);
 }
