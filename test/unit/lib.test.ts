@@ -33,7 +33,7 @@ function addTests(repo) {
     const deps = { ...(modulePackage.dependencies || {}), ...(modulePackage.peerDependencies || {}) };
 
     before((cb) => {
-      installGitRepo(repo, dest, (err?: Error): undefined => {
+      installGitRepo(repo, dest, (err?: Error): void => {
         if (err) {
           cb(err);
           return;
@@ -58,7 +58,7 @@ function addTests(repo) {
       it('test:karma', (done) => {
         // Requires Chrome/Chromium for ChromeHeadless
         // Only run .ts tests - .cjs files use require() which doesn't work in browsers
-        karma(['test/unit/**/*.test.ts'], { cwd: dest, stdio: 'inherit' }, (err?: Error): undefined => {
+        karma(['test/unit/**/*.test.ts'], { cwd: dest, stdio: 'inherit' }, (err?: Error): void => {
           if (err) {
             done(err);
             return;
