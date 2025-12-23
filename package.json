@@ -50,8 +50,8 @@
   },
   "dependencies": {
     "assert": "1.5.0",
-    "cross-spawn-cb": "^3.0.0",
-    "getopts-compat": "^2.2.6",
+    "cross-spawn-cb": "^3.1.0",
+    "getopts-compat": "^2.2.5",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "^3.2.0",
     "karma-mocha": "^2.0.1",
@@ -60,13 +60,13 @@
     "karma-webpack": "^5.0.1",
     "link-unlink": "^1.1.0",
     "mocha": "^11.7.5",
-    "node-version-call": "^2.1.0",
+    "node-version-call": "^3.0.0",
     "queue-cb": "^1.6.3",
     "regenerator-runtime": "^0.14.1",
     "resolve-bin-sync": "^1.0.12",
     "ts-loader": "^9.5.4",
     "tsds-lib": "^1.21.1",
-    "webpack": "^5.104.0"
+    "webpack": "^5.104.1"
   },
   "devDependencies": {
     "@types/mocha": "*",
@@ -78,7 +78,7 @@
     "short-hash": "^1.0.0",
     "ts-dev-stack": "*",
     "tsds-config": "*",
-    "tsds-lib-test": "^1.20.0",
+    "tsds-lib-test": "^1.20.2",
     "typescript": "^5.9.3"
   },
   "engines": {
