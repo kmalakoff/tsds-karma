@@ -79,7 +79,7 @@
     "ts-dev-stack": "*",
     "tsds-config": "*",
     "tsds-lib-test": "^1.20.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "engines": {
     "node": ">=0.8"

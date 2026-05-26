@@ -1,6 +1,6 @@
 var extensions = ['.ts', '.tsx', '.mts', '.js', '.jsx', '.mjs'];
 
-var preprocessors = extensions.reduce((memo, ext) => {
+var preprocessors = extensions.reduce((memo: Record<string, string[]>, ext) => {
   memo[`test/**/*${ext}`] = ['webpack', 'sourcemap'];
   return memo;
 }, {});
@@ -22,7 +22,7 @@ var webpack = {
   },
 };
 
-module.exports = (config) => {
+module.exports = (config: { set: (opts: Record<string, unknown>) => void }) => {
   var pattern = process.argv[process.argv.length - 1];
   config.set({
     basePath: process.cwd(),
