@@ -1,4 +1,4 @@
-var extensions = require('tsds-lib').extensions;
+var extensions = ['.ts', '.tsx', '.mts', '.js', '.jsx', '.mjs'];
 
 var preprocessors = extensions.reduce(function (memo, ext) {
   memo['test/**/*' + ext] = ['webpack', 'sourcemap'];
@@ -12,6 +12,10 @@ var webpack = {
   },
   resolve: {
     extensions: extensions,
+    extensionAlias: {
+      '.js': ['.ts', '.js'],
+      '.mjs': ['.mts', '.mjs'],
+    },
     alias: {
       jsdom: false,
     },
