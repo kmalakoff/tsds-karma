@@ -12,7 +12,7 @@ import url from 'url';
 const major = +process.versions.node.split('.')[0];
 const __dirname = path.dirname(typeof __filename === 'undefined' ? url.fileURLToPath(import.meta.url) : __filename);
 const dist = path.join(__dirname, '..');
-const config = path.join(__dirname, '..', '..', 'assets', 'karma.conf.cjs');
+const config = path.join(__dirname, 'assets', 'karma.conf.cjs');
 
 function run(args: string[], options: CommandOptions, callback: CommandCallback) {
   const cwd: string = (options.cwd as string) || process.cwd();
